@@ -1,0 +1,10 @@
+const express = require("express");
+const model = require("../models/User.model");
+const controllers = require("../controllers/controllers.posts");
+const verifyToken = require("../middlewares/verify.token");
+const validToken = require("../middlewares/validToken");
+const router = express.Router();
+router.route("/").get(controllers.GetAllPost);
+router.route("/:Id_aurthor");
+router.route("/createPost").post(controllers.CreatePost);
+module.exports = router;
